@@ -21,10 +21,10 @@ export function CommentCaMarche() {
       <h4>Ce qui est vérifié</h4>
       <ul>
         <li>
-          Le calcul des probabilités reproduit deux captures de l'interface du jeu (Rousse ×
-          Dorée avec lignée, Pourpre × Émeraude), au centième de pourcent.
+          Le calcul des probabilités reproduit deux captures de l'interface du jeu (Cannelle ×
+          Citron avec lignée, Cerise × Menthe), au centième de pourcent.
         </li>
-        <li>La recette Émeraude = Ivoire turquoise + Ivoire pourpre est confirmée en jeu.</li>
+        <li>La recette Menthe = Nacre lagon + Nacre cerise est confirmée en jeu.</li>
       </ul>
 
       <h4>Ce qui ne l'est pas</h4>

@@ -1,4 +1,4 @@
-# Opti Elevage
+# Planificateur de croisements
 
 Plugin [ExziHub](../../README.md) : planificateur d'élevage de bêtes à
 couleurs (oiseaux fictifs) — Perruches, Canaris, Pinsons, un onglet par espèce.
@@ -71,7 +71,7 @@ croiser deux monocolores, de n'importe quelle génération, donne la bicolore
 d'objectif « bicolore » et le catalogue de couleurs de l'enclos.
 
 **Perruches** : calibrée sur le jeu (voir « Le modèle » ci-dessous), avec
-des bicolores intermédiaires nommées (Dorée rousse, Ébène indigo...).
+des bicolores intermédiaires nommées (Citron cannelle, Ardoise nuit...).
 
 **Canaris et Pinsons** : ajoutées sans accès direct au jeu, à partir d'une
 description des monocolores et de leurs recettes de génération 3 et plus.
@@ -98,17 +98,17 @@ du père avec une couleur de celle de la mère (celles qui forment une recette, 
 = produit des deux) ; sinon il reprend une couleur de l'un des deux parents.
 
 **Vérifié** : deux captures de l'interface du jeu sont reproduites au centième de
-pourcent (Rousse niv. 65 de Amande + Rousse × Dorée niv. 55 ; Pourpre niv. 200 ×
-Émeraude niv. 1), voir `tests/croisement.test.ts`.
+pourcent (Cannelle niv. 65 de Sable + Cannelle × Citron niv. 55 ; Cerise niv. 200 ×
+Menthe niv. 1), voir `tests/croisement.test.ts`.
 
 **Non vérifié** : `r` est mesuré en génération 1 (0,6) et 9 (0,1335) ; entre les
-deux il est interpolé. Les recettes viennent d'une image, sauf Émeraude = Ivoire
-turquoise + Ivoire pourpre, confirmée en jeu. Tout est modifiable dans les
+deux il est interpolé. Les recettes viennent d'une image, sauf Menthe = Nacre
+lagon + Nacre cerise, confirmée en jeu. Tout est modifiable dans les
 réglages, et l'écran « Comment ça marche » le dit à l'utilisateur.
 
 **Limite connue** : le jeu n'affiche que les parents d'une perruche, pas ses
 grands-parents. Si ceux-ci pèsent aussi dans le calcul, l'outil ne les connaît pas :
-une Dorée de « Dorée + Amande » donne dans le jeu 37 % Dorée / 63 % Amande côté
+une Citron de « Citron + Sable » donne dans le jeu 37 % Citron / 63 % Sable côté
 lignée, là où l'outil en prévoit 73 % / 27 %. L'estimation est donc approximative
 pour une perruche issue d'un accouplement, et exacte pour une capturée.
 

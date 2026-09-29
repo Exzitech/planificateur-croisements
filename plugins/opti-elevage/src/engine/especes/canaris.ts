@@ -10,17 +10,17 @@ import type { EspeceBrute } from "./types";
  * a verifier en jeu.
  */
 const COULEURS: readonly Couleur[] = [
-  { id: "Eb", nom: "Ébène", hex: "#2B2320" },
-  { id: "In", nom: "Indigo", hex: "#4D2E93" },
-  { id: "Po", nom: "Pourpre", hex: "#C2183F" },
-  { id: "Or", nom: "Orchidée", hex: "#D3A0E0" },
-  { id: "Do", nom: "Doré", hex: "#E4BE1A" },
-  { id: "Ro", nom: "Roux", hex: "#E07B24" },
-  { id: "Am", nom: "Amande", hex: "#E6D8B4" },
-  { id: "Iv", nom: "Ivoire", hex: "#F1EDE4" },
-  { id: "Tu", nom: "Turquoise", hex: "#2EC4BF" },
-  { id: "Pr", nom: "Prune", hex: "#B98BD0" },
-  { id: "Em", nom: "Émeraude", hex: "#31BD4E" },
+  { id: "Eb", nom: "Ardoise", hex: "#2B2320" },
+  { id: "In", nom: "Nuit", hex: "#4D2E93" },
+  { id: "Po", nom: "Cerise", hex: "#C2183F" },
+  { id: "Or", nom: "Lilas", hex: "#D3A0E0" },
+  { id: "Do", nom: "Citron", hex: "#E4BE1A" },
+  { id: "Ro", nom: "Cannelle", hex: "#E07B24" },
+  { id: "Am", nom: "Sable", hex: "#E6D8B4" },
+  { id: "Iv", nom: "Nacre", hex: "#F1EDE4" },
+  { id: "Tu", nom: "Lagon", hex: "#2EC4BF" },
+  { id: "Pr", nom: "Figue", hex: "#B98BD0" },
+  { id: "Em", nom: "Menthe", hex: "#31BD4E" },
   { id: "Ab", nom: "Ambre", hex: "#C68A1E" },
   { id: "Co", nom: "Corail", hex: "#FF6F59" },
   { id: "Az", nom: "Azur", hex: "#2E7FE0" },
@@ -35,7 +35,7 @@ const COULEURS: readonly Couleur[] = [
  *
  * Seuls les monocolores de generation 3 et plus ont une recette propre ;
  * chacune n'a ici qu'UN des plusieurs croisements possibles listes par le
- * jeu (ex. Roux : 6 combinaisons valables, une seule retenue) : a verifier
+ * jeu (ex. Cannelle : 6 combinaisons valables, une seule retenue) : a verifier
  * en jeu, et modifiable dans les reglages comme pour les Perruches.
  */
 const RECETTES_DEFAUT = `PoDo = Po + Do

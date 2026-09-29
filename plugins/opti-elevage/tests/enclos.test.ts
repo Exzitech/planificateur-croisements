@@ -6,7 +6,7 @@ import { groupe } from "./aide";
 
 /**
  * Reproduit ce que fait le store quand on precise le niveau d'une bete d'un
- * groupe : la detacher sans toucher aux autres. Savoir qu'une rousse est
+ * groupe : la detacher sans toucher aux autres. Savoir qu'une cannelle est
  * niveau 120 ne dit rien des vingt-neuf autres.
  */
 function preciserNiveau(liste: Groupe[], id: string, niveau: number): Groupe[] {
@@ -54,7 +54,7 @@ describe("préciser le niveau d'une perruche", () => {
 
 describe("saisie rapide", () => {
   it("ajoute des groupes sans lignée, un par couleur et par état", () => {
-    // Ce que produit la grille pour « 28 rousses mâles fertiles, 2 femelles stériles ».
+    // Ce que produit la grille pour « 28 cannelle mâles fertiles, 2 femelles stériles ».
     const saisis = [
       { couleur: "R", sexe: 0 as const, fertile: true, niveau: 1, parents: [], quantite: 28 },
       { couleur: "R", sexe: 1 as const, fertile: false, niveau: 1, parents: [], quantite: 2 },

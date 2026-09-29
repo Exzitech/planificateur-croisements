@@ -235,7 +235,7 @@ export function Enclos({
         setErreurFichier(`${ignores} ligne${ignores > 1 ? "s" : ""} ignorée${ignores > 1 ? "s" : ""} (couleur inconnue).`);
       }
     } catch {
-      setErreurFichier("Fichier illisible : ce n'est pas un export Opti Élevage valide.");
+      setErreurFichier("Fichier illisible : ce n'est pas un export Planificateur de croisements valide.");
     }
   };
 

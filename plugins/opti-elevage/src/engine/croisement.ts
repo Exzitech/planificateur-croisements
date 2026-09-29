@@ -16,10 +16,10 @@ import type { Config, Couleur, CouleurId, Croisement, Bete } from "./types";
  *  - Sinon (1 - P), le bebe reprend une couleur de la lignee de l'un des deux
  *    parents, a parts egales entre eux, au prorata des poids.
  *
- * Capture 1 : Rousse niv. 65 (de Amande + Rousse) x Doree niv. 55 : Doree et
- * Rousse 34,91 %, Amande et Doree 13,09 %, Rousse 18,91 %, Doree 25,99 %,
- * Amande 7,1 %  ->  r = 0,6 en generation 1.
- * Capture 2 : Pourpre niv. 200 x Emeraude niv. 1 (de IT + IvP) : r = 0,1335 en
+ * Capture 1 : Cannelle niv. 65 (de Sable + Cannelle) x Citron niv. 55 : Citron et
+ * Cannelle 34,91 %, Sable et Citron 13,09 %, Cannelle 18,91 %, Citron 25,99 %,
+ * Sable 7,1 %  ->  r = 0,6 en generation 1.
+ * Capture 2 : Cerise niv. 200 x Menthe niv. 1 (de IT + IvP) : r = 0,1335 en
  * generation 9.  Entre les deux, `r` est interpole (decroissance exponentielle) :
  * c'est une hypothese, pas une mesure.
  */
