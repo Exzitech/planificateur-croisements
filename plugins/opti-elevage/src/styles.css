@@ -1,0 +1,122 @@
+/* Une seule largeur de champ numerique dans tout le plugin : cinq valeurs
+   differentes (56 a 80px) donnaient des colonnes en escalier. */
+:root { --dd-champ: 84px; }
+/* Opti Elevage : styles du plugin.
+   Les variables (--panel, --accent...) et les classes communes (.btn-ghost,
+   .muted, .hint, .spacer) viennent de la feuille du hub. */
+
+.dd { display: grid; gap: 16px; max-width: 900px; }
+
+.dd-entete { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.dd-entete h2 { margin: 0; }
+.dd-encours { color: var(--alert-text); }
+
+.dd-section { display: grid; gap: 10px; padding: 12px 14px; background: var(--panel); border-radius: var(--radius); box-shadow: var(--shadow-card); }
+.dd-section h3 { margin: 0; font-size: 15px; }
+/* Titre de section avec une action a droite (annuler la derniere saisie). */
+.dd-section-tete { display: flex; align-items: center; gap: 10px; }
+.dd-section h4 { margin: 8px 0 0; font-size: 13px; color: var(--muted); }
+.dd-section summary { cursor: pointer; list-style: none; }
+.dd-section summary::-webkit-details-marker { display: none; }
+.dd-section summary h3 { display: inline; }
+.dd-section summary::before { content: "▸ "; color: var(--muted); }
+.dd-section[open] > summary::before { content: "▾ "; }
+
+.dd-ligne { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 8px 14px; }
+.dd-ligne label, .dd-formulaire label { display: grid; gap: 4px; font-size: 12px; color: var(--muted); }
+.dd-case { display: flex !important; align-items: center; gap: 6px; }
+.dd-avec-unite { display: flex; align-items: center; gap: 4px; }
+.dd-avec-unite input { width: var(--dd-champ); }
+.dd-ligne input[type="number"], .dd-formulaire input[type="number"] { width: var(--dd-champ); }
+
+.dd-onglets { display: flex; gap: 6px; }
+.dd-resultat-objectif { align-self: center; }
+.dd-resultat-objectif code { font-size: 12px; color: var(--muted); }
+
+/* ---- Pastilles ---- */
+.dd-pastille { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.dd-point { width: 12px; height: 12px; border-radius: 50%; flex: none; border: 1px solid rgba(45, 36, 32, .25); }
+/* Le sexe se lit d'un coup d'oeil : pastille teintee, symbole gras et agrandi. */
+.dd-sexe { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; padding: 1px 5px; border-radius: 999px; font-weight: 800; font-size: 1.15em; line-height: 1.25; }
+.dd-male { color: var(--info-text); background: var(--tint-info); }
+.dd-femelle { color: #b5477a; background: rgba(181, 71, 122, .14); }
+
+/* ---- Enclos ---- */
+.dd-formulaire { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 8px 12px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
+/* Un <select> natif et un <input> a padding egal ne font pas la meme hauteur :
+   le bloc du champ Quantite etait plus haut, donc son libelle remontait au-dessus
+   des autres. Hauteur imposee aux deux ; le tactile garde ses 48px (min-height). */
+.dd-formulaire select, .dd-formulaire input:not([type="checkbox"]),
+.dd-ligne select, .dd-ligne input:not([type="checkbox"]) { height: 42px; }
+.dd-compteur { font-size: 12px; font-weight: 400; color: var(--muted); }
+.dd-trop { color: var(--alert-text); font-weight: 600; }
+.dd-alerte { margin: 0; padding: 8px 10px; border: 1px solid var(--line-alert); border-radius: var(--radius-sm); background: var(--tint-alert); font-size: 13px; }
+
+.dd-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.dd-table th { text-align: left; font-size: 11px; text-transform: uppercase; color: var(--muted); padding: 4px 6px; border-bottom: 1px solid var(--border); }
+.dd-table td { padding: 4px 6px; border-bottom: 1px solid var(--border); }
+/* Une seule colonne absorbe l'espace libre (la lignee, la plus longue) ; les
+   autres se serrent sur leur contenu et restent sous leur en-tete. */
+.dd-table .dd-col-souple { width: 100%; }
+.dd-table th:not(.dd-col-souple), .dd-table td:not(.dd-col-souple) { width: 1%; white-space: nowrap; }
+.dd-quantite { display: flex; align-items: center; gap: 6px; justify-content: flex-start; }
+.dd-quantite button { padding: 0 8px; }
+.dd-captures td:not(:first-child), .dd-captures th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+.dd-total td { border-top: 1px solid var(--border); border-bottom: none; }
+
+/* ---- Couples proposes ---- */
+.dd-couples, .dd-clones { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.dd-couple { display: grid; gap: 8px; padding: 10px 12px; border-radius: var(--radius); background: var(--panel); box-shadow: var(--shadow-card); }
+.dd-meilleur { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); }
+.dd-couple-tete { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.dd-parents { display: inline-flex; align-items: center; gap: 8px; }
+.dd-badge { padding: 1px 8px; border-radius: 999px; background: var(--accent); color: #fff; font-size: 11px; font-weight: 600; }
+.dd-enregistrer { padding-top: 4px; border-top: 1px solid var(--border); }
+
+/* Nombre de clonages a enregistrer d'un coup. */
+.dd-nb { width: 64px; }
+.dd-clones li { display: flex; align-items: center; gap: 10px; padding: 6px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); }
+
+/* Niveaux reels, saisis juste avant l'accouplement. */
+.dd-niveaux { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 8px 14px; }
+.dd-niveau { display: grid; gap: 4px; font-size: 12px; color: var(--muted); }
+.dd-niveau input { width: var(--dd-champ); }
+.dd-chance { align-self: center; font-size: 13px; }
+.dd-chance strong { color: var(--text); }
+
+/* ---- Barre de probabilites ---- */
+.dd-probas { display: grid; gap: 6px; }
+.dd-barre { display: flex; height: 22px; border-radius: 5px; overflow: hidden; border: 1px solid var(--border); }
+.dd-segment { min-width: 2px; }
+/* La couleur cible se distingue sans dependre de sa teinte. */
+.dd-cible { box-shadow: inset 0 0 0 2px rgba(45, 36, 32, .45); }
+.dd-legende { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--muted); }
+.dd-legende li { display: inline-flex; align-items: center; gap: 5px; }
+.dd-cible-texte { color: var(--text); }
+.dd-avertissement { margin: 0; font-size: 12px; color: var(--alert-text); }
+
+.dd-effort { margin: 4px 0 0; font-size: 13px; }
+
+/* ---- Reglages ---- */
+.dd-avances { display: grid; gap: 8px; padding: 10px; border: 1px dashed var(--border); border-radius: var(--radius-sm); }
+.dd-recettes { width: 100%; font-family: ui-monospace, Consolas, monospace; font-size: 12px; resize: vertical; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px; }
+.dd-erreurs { margin: 0; padding-left: 18px; color: var(--error-text); font-size: 12px; }
+
+.dd-explications p, .dd-explications li { font-size: 13px; line-height: 1.5; }
+.dd-explications ul { margin: 4px 0; padding-left: 18px; }
+
+/* Une animation n'apporte rien ici : on n'en met pas, mais on reste explicite. */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* ---- Saisie rapide d'un enclos deja garni ---- */
+.dd-rapide { display: grid; gap: 8px; padding: 10px; border: 1px dashed var(--border); border-radius: var(--radius-sm); }
+.dd-rapide-defilement { max-height: 320px; overflow: auto; }
+.dd-grille th { position: sticky; top: 0; background: var(--panel); }
+.dd-grille input { width: var(--dd-champ); }
+.dd-grille td { padding: 2px 6px; }
+
+.dd-nb-feconde { width: var(--dd-champ); }
+.dd-lignee { font-size: 12px; }
+.dd-table .dd-gen th { background: var(--panel-2); padding: 6px; border-top: 1px solid var(--border); }
