@@ -1,6 +1,6 @@
-# Opti Élevage : planifier par la simulation
+# Planificateur de croisements : planifier par la simulation
 
-**[▶ Essayer la démo](https://exzitech.github.io/opti-elevage/)** · TypeScript · React · Web Worker · Vitest
+**[▶ Essayer la démo](https://exzitech.github.io/planificateur-croisements/)** · TypeScript · React · Web Worker · Vitest
 
 ![Aperçu](docs/apercu.png)
 

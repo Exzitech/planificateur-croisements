@@ -54,7 +54,7 @@ describe("especes", () => {
 
   it("une bicolore libre suit la regle max(gen) + 1, pour chaque espece", () => {
     for (const espece of ESPECES) {
-      // Deux monocolores non deja lies par une recette : Canaris Ambre + Roux (9, 3) -> 10.
+      // Deux monocolores non deja lies par une recette : Canaris Ambre + Cannelle (9, 3) -> 10.
       const cible = espece.catalogue.find((c) => c.parents);
       expect(cible).toBeTruthy();
       if (!cible?.parents) continue;

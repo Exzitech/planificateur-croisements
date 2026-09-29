@@ -4,7 +4,7 @@ import { config, groupe } from "./aide";
 
 describe("plan par vagues", () => {
   const cfg = config();
-  // Amande rousse (AR) a fabriquer : il y a de l'Amande et de la Rousse fecondes.
+  // Sable cannelle (AR) a fabriquer : il y a de l'Sable et de la Cannelle fecondes.
   const enclos = [
     groupe("A", { sexe: 0, quantite: 3 }),
     groupe("A", { sexe: 1, quantite: 3 }),
@@ -23,7 +23,7 @@ describe("plan par vagues", () => {
     }
   });
 
-  it("le goal compte les parents : au moins une Amande et une Rousse pour une Amande rousse", () => {
+  it("le goal compte les parents : au moins une Sable et une Cannelle pour une Sable cannelle", () => {
     const besoins = Object.fromEntries(a.plan!.besoins.map((b) => [b.couleur, b.moyenne]));
     expect(besoins.A).toBeGreaterThanOrEqual(1);
     expect(besoins.R).toBeGreaterThanOrEqual(1);

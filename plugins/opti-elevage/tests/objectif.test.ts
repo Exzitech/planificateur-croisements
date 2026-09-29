@@ -19,9 +19,9 @@ describe("resoudreObjectif", () => {
 });
 
 describe("catalogue", () => {
-  it("propose Ebene et Doree en generation 4, declarable comme recette", () => {
+  it("propose Ardoise et Citron en generation 4, declarable comme recette", () => {
     const e = catalogue.find((c) => c.id === "EbD");
-    expect(e).toMatchObject({ nom: "Ébène et Dorée", gen: 4 });
+    expect(e).toMatchObject({ nom: "Ardoise et Citron", gen: 4 });
     const { lignes, ids } = recettesBicolores(["EbD", "R"]);
     expect(analyserRecettes(couleurs, `${recettesDefaut}\n${lignes}`, ids).erreurs).toEqual([]);
   });

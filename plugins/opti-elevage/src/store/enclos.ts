@@ -106,7 +106,7 @@ export function useEnclos(especeId: string) {
 
   /**
    * Fixe le niveau d'UNE bete du groupe, en la detachant si le groupe en
-   * contient plusieurs : savoir qu'une rousse est niveau 120 ne dit rien des
+   * contient plusieurs : savoir qu'une cannelle est niveau 120 ne dit rien des
    * vingt-neuf autres.
    */
   const preciserNiveau = useCallback(

@@ -51,8 +51,8 @@ function EspaceEspece({ espece }: { espece: Espece }) {
     [espece, objectif, texteRecettes],
   );
 
-  // L'objectif et l'enclos peuvent citer des bicolores libres (Ebene et
-  // Doree...) : on les declare pour que le moteur les connaisse, en plus du
+  // L'objectif et l'enclos peuvent citer des bicolores libres (Ardoise et
+  // Citron...) : on les declare pour que le moteur les connaisse, en plus du
   // vocabulaire propre a l'espece (ses bicolores intermediaires).
   const recettes = useMemo(() => {
     const utilisees = [...couleurs, ...enclos.groupes.flatMap((g) => [g.couleur, ...g.parents])];
@@ -242,7 +242,7 @@ function EspaceEspece({ espece }: { espece: Espece }) {
   );
 }
 
-export function OptiElevageTool() {
+export function PlanificateurTool() {
   // L'espece ouverte reste locale : c'est un choix d'affichage, pas une donnee.
   const [especeId, setEspeceId] = usePersistant("espece", ESPECES[0].id);
   const espece = ESPECES.find((e) => e.id === especeId) ?? ESPECES[0];
@@ -263,7 +263,7 @@ function Ecran({ espece, setEspeceId }: { espece: Espece; setEspeceId: (id: stri
   if (!f.dossier) {
     return (
       <div className="dd">
-        <header className="dd-entete"><h2>{espece.emoji} Opti Élevage</h2></header>
+        <header className="dd-entete"><h2>{espece.emoji} Planificateur de croisements</h2></header>
         <p className="hint">
           Choisis un espace Nextcloud : ton enclos et tes objectifs te suivent d'un appareil a l'autre.
         </p>
@@ -275,7 +275,7 @@ function Ecran({ espece, setEspeceId }: { espece: Espece; setEspeceId: (id: stri
   return (
     <div className="dd">
       <header className="dd-entete">
-        <h2>{espece.emoji} Opti Élevage</h2>
+        <h2>{espece.emoji} Planificateur de croisements</h2>
         <div className="dd-onglets" role="group" aria-label="Espèce">
           {ESPECES.map((e) => (
             <button

@@ -34,7 +34,7 @@ const PARTIES = 2000;
  * moteur a deplace les resultats, pour qu'on le fasse en connaissance de cause.
  */
 describe("simulation de reference (enclos vide, niveau visé 60)", () => {
-  it("objectif génération 10 : Émeraude et Rousse", () => {
+  it("objectif génération 10 : Menthe et Cannelle", () => {
     const cfg = config("EmR = Em + R", ["EmR"]);
     const r = jouer(cfg, ["EmR"], PARTIES);
     expect(r.parties).toBe(PARTIES);
@@ -53,13 +53,13 @@ describe("simulation de reference (enclos vide, niveau visé 60)", () => {
     expect(r.clonages).toBeLessThan(377 * 1.1);
   });
 
-  it("objectif génération 9 : prune et émeraude", () => {
+  it("objectif génération 9 : figue et menthe", () => {
     const r = jouer(config(), ["Pr", "Em"], PARTIES);
     expect(r.total).toBeGreaterThan(64);
     expect(r.total).toBeLessThan(76);
   });
 
-  it("objectif génération 9 : émeraude seule", () => {
+  it("objectif génération 9 : menthe seule", () => {
     const r = jouer(config(), ["Em"], PARTIES);
     expect(r.total).toBeGreaterThan(56);
     expect(r.total).toBeLessThan(68);
@@ -96,15 +96,15 @@ describe("cas limites", () => {
 
   it("cloner deux stériles de même couleur donne toujours cette couleur", () => {
     const cfg = config();
-    // Deux Émeraude steriles, et rien d'autre : la seule action possible est
-    // le clonage, qui doit produire une Émeraude a coup sur.
+    // Deux Menthe steriles, et rien d'autre : la seule action possible est
+    // le clonage, qui doit produire une Menthe a coup sur.
     const depart = deplier([groupe("Em", { quantite: 2, fertile: false })]);
     for (let i = 0; i < 200; i++) {
       const r = simuler(cfg, depart, ["Em"], null, mulberry32(i));
       // L'objectif est deja la (sterile) : aucune capture, aucun clonage force.
       expect(r?.parCouleur.R).toBe(0);
     }
-    // Force le besoin : objectif Prune, dont la recette exige des fertiles.
+    // Force le besoin : objectif Figue, dont la recette exige des fertiles.
     const r = simuler(cfg, depart, ["Em"], null, mulberry32(7));
     expect(r).not.toBeNull();
   });
@@ -114,7 +114,7 @@ describe("cas limites", () => {
     const r = simuler(cfg, deplier([]), ["DR"], null, mulberry32(1));
     expect(r).not.toBeNull();
     expect(Object.keys(r!.parCouleur).sort()).toEqual(["A", "D", "R"]);
-    // DR = R + D : deux captures au minimum, aucune Amande.
+    // DR = R + D : deux captures au minimum, aucune Sable.
     expect(r!.parCouleur.R + r!.parCouleur.D).toBeGreaterThanOrEqual(2);
   });
 });
@@ -132,7 +132,7 @@ describe("analyser", () => {
     expect(a.atteint).toBe(false);
     expect(a.baseline).toBeDefined();
     expect(a.candidats?.length).toBeGreaterThan(0);
-    // TO x IT donne directement la Prune : ce doit etre le meilleur choix.
+    // TO x IT donne directement la Figue : ce doit etre le meilleur choix.
     expect(a.candidats?.[0].enfant).toBe("Pr");
     // Classement croissant par captures moyennes.
     const totaux = a.candidats!.map((c) => c.resume.total.moyenne);

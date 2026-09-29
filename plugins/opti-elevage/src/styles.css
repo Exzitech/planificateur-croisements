@@ -1,7 +1,7 @@
 /* Une seule largeur de champ numerique dans tout le plugin : cinq valeurs
    differentes (56 a 80px) donnaient des colonnes en escalier. */
 :root { --dd-champ: 84px; }
-/* Opti Elevage : styles du plugin.
+/* Planificateur de croisements : styles du plugin.
    Les variables (--panel, --accent...) et les classes communes (.btn-ghost,
    .muted, .hint, .spacer) viennent de la feuille du hub. */
 
