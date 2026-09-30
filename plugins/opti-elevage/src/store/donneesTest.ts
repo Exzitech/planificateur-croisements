@@ -11,8 +11,10 @@ export function genererDonneesTest(espece: Espece): NouveauGroupe[] {
   const groupes: NouveauGroupe[] = [];
   espece.capturables.forEach((couleur, i) => {
     groupes.push(
-      { couleur, sexe: 0, fertile: true, niveau: 1, parents: [], quantite: 6 + i },
-      { couleur, sexe: 1, fertile: true, niveau: 1, parents: [], quantite: 6 + i },
+      // enAttente explicite : sans lui, la migration de l'enclos (fertile sans
+      // enAttente = ancienne saisie) repasserait ces fecondes « en attente ».
+      { couleur, sexe: 0, fertile: true, enAttente: false, niveau: 1, parents: [], quantite: 6 + i },
+      { couleur, sexe: 1, fertile: true, enAttente: false, niveau: 1, parents: [], quantite: 6 + i },
       { couleur, sexe: 0, fertile: true, enAttente: true, niveau: 1, parents: [], quantite: 2 },
       { couleur, sexe: 1, fertile: true, enAttente: true, niveau: 1, parents: [], quantite: 2 },
       { couleur, sexe: 0, fertile: false, niveau: 1, parents: [], quantite: 3 },

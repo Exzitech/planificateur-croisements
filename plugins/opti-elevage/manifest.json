@@ -4,7 +4,7 @@
   "icon": "land-plot",
   "category": "games",
   "subcategory": "Simulation",
-  "version": "1.21.1",
+  "version": "1.21.2",
   "description": "Elevage de perruches, canaris, pinsons : quels couples accoupler, quoi cloner, combien capturer.",
   "entry": "index.js",
   "style": "style.css"
