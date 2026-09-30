@@ -54,7 +54,7 @@ describe("préciser le niveau d'une perruche", () => {
 
 describe("saisie rapide", () => {
   it("ajoute des groupes sans lignée, un par couleur et par état", () => {
-    // Ce que produit la grille pour « 28 cannelle mâles fertiles, 2 femelles stériles ».
+    // Ce que produit la grille pour « 28 cannelles mâles fertiles, 2 femelles stériles ».
     const saisis = [
       { couleur: "R", sexe: 0 as const, fertile: true, niveau: 1, parents: [], quantite: 28 },
       { couleur: "R", sexe: 1 as const, fertile: false, niveau: 1, parents: [], quantite: 2 },
